@@ -79,7 +79,6 @@ public class WarehouseImpl implements Warehouse {
             lastSupply = warehouse.get(nameToUpper).poll();
             product.get(nameToUpper).addFirst(lastSupply);
             unitsExtracted = unitsExtracted + lastSupply.getUnits();
-            System.out.println(product);
 
         } while (units >= unitsExtracted);
 
@@ -100,7 +99,7 @@ public class WarehouseImpl implements Warehouse {
             Supply lastProduct = product.get(nameToUpper).poll();
 
             product.get(nameToUpper).addFirst(returnedSupply);
-            System.out.println(product);
+
         }
 
         return product;

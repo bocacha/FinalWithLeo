@@ -1,6 +1,8 @@
 package app;
 
-import ConsoleInterface.MenuCommands;
+import ConsoleInterface.FormulaCommand;
+import ConsoleInterface.PurchaseCommand;
+import ConsoleInterface.WarehouseCommands;
 import formulas.*;
 import warehouse.*;
 import java.util.*;
@@ -18,7 +20,10 @@ public class MyApp {
 
     public static void main(String[] args) {
         initializeValues();
-        MenuCommands menu = new MenuCommands(warehouse);
+        WarehouseCommands menuW = new WarehouseCommands(warehouse);
+        FormulaCommand menuF = new FormulaCommand(formula);
+        PurchaseCommand menuP = new PurchaseCommand(warehouse,formula);
+
         int option = 0;
         //warehouse.createSupply("Corn");
         System.out.println();
@@ -37,7 +42,15 @@ public class MyApp {
             System.out.println("=================================");
 
             option = sc.nextInt();
-            menu.select(option);
+            if(option==1){
+                menuW.select(1);
+            }else if(option==2){
+                menuF.select(1);
+            }else if(option==3){
+                menuP.select(1);
+            }
+
+
         }
     }
         //printMenu(new MenuFormat());

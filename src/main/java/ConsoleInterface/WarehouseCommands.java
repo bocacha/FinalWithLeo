@@ -4,10 +4,10 @@ import app.Warehouse;
 
 import java.util.Scanner;
 
-public class MenuCommands  {
+public class WarehouseCommands {
 
         Warehouse warehouse;
-        public MenuCommands(Warehouse warehouse){
+        public WarehouseCommands(Warehouse warehouse){
             this.warehouse = warehouse;
         }
 
@@ -32,29 +32,6 @@ public class MenuCommands  {
 
         }
 
-    public void formulaMenu() {
-        int option=0;
-        while(option !=5){
-            System.out.println("=================================");
-            System.out.println("|    1. Check Status            |");
-            System.out.println("|    2. Create Formula          |");
-            System.out.println("|    3. Add Supplies to Formula |");
-            System.out.println("|    4. Delete Formula          |");
-            System.out.println("|    5. Exit                    |");
-            System.out.println("=================================");
-            System.out.println("Please select an option: ");
-            System.out.println("=================================");
-            option= sc.nextInt();
-            WarehouseOptions wo = new WarehouseOptions(warehouse);
-            wo.select(option);
-        }
-
-    }
-
-        public void warehouseOptions() {
-            System.out.println("Menu Principal");
-        }
-
         public void exit() {
             System.out.println("this is a formula");
         }
@@ -67,16 +44,6 @@ public class MenuCommands  {
                 new MoveAction() {
                     public void select() {
                         warehouseMenu();
-                    }
-                },
-                new MoveAction() {
-                    public void select() {
-                        formulaMenu();
-                    }
-                },
-                new MoveAction() {
-                    public void select() {
-                        warehouseOptions();
                     }
                 },
                 new MoveAction() {

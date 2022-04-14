@@ -1,5 +1,6 @@
 package receipts;
 
+import ConsoleInterface.PurchaseOptions;
 import warehouse.Supply;
 
 public class ReceiptFormat extends ReceiptImpl {
@@ -22,7 +23,7 @@ public class ReceiptFormat extends ReceiptImpl {
 
     @Override
     protected String printSupply(Supply in) {
-        return "| " +  in.getUnits() + " units to " + in.getPrice() + " = " + in.getPrice()* in.getUnits() + "\n";
+        return "| " +  in.getUnits() + " units to " + in.getPrice() + " = " + Math.floor(in.getPrice()* in.getUnits()*100)/100 + "\n";
     }
 
 

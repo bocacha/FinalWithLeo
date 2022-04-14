@@ -1,6 +1,5 @@
 package ConsoleInterface;
 
-import ConsoleInterface.MenuCommands;
 import app.Warehouse;
 
 import java.util.Scanner;
@@ -60,28 +59,28 @@ public class WarehouseOptions  {
         void select();
     }
 
-    private MenuCommands.MoveAction[] moveActions = new MenuCommands.MoveAction[]{
-            new MenuCommands.MoveAction() {
+    private WarehouseCommands.MoveAction[] moveActions = new WarehouseCommands.MoveAction[]{
+            new WarehouseCommands.MoveAction() {
                 public void select() {
                     checkStatus();
                 }
             },
-            new MenuCommands.MoveAction() {
+            new WarehouseCommands.MoveAction() {
                 public void select() {
                     createSupplyStorage();
                 }
             },
-            new MenuCommands.MoveAction() {
+            new WarehouseCommands.MoveAction() {
                 public void select() {
                     addToStorage();
                 }
             },
-            new MenuCommands.MoveAction() {
+            new WarehouseCommands.MoveAction() {
                 public void select() {
                     something();
                 }
             },
-            new MenuCommands.MoveAction() {
+            new WarehouseCommands.MoveAction() {
                 public void select() {
                     back();
                 }
