@@ -1,12 +1,15 @@
 package formulas;
 
 import app.*;
+import org.apache.log4j.Logger;
+import warehouse.WarehouseImpl;
 
 import java.util.HashMap;
 import java.util.Map;
 
 class FormulasImpl implements Formulas {
 
+    private static Logger logger = Logger.getLogger(FormulasImpl.class);
     private Map<String, Map<String, Integer>> formulaList = new HashMap<>();
 
 
@@ -15,6 +18,7 @@ class FormulasImpl implements Formulas {
         String nameToUpper= name.toUpperCase();
         Map<String, Integer> formula = new HashMap<>();
         formulaList.put(nameToUpper, formula);
+        logger.info(nameToUpper + " Formula was created!");
 
     }
 
@@ -24,7 +28,7 @@ class FormulasImpl implements Formulas {
         String ingredientToUpper = ingredient.toUpperCase();
 
         formulaList.get(nameToUpper).put(ingredientToUpper,units);
-
+        logger.info(units + " " +ingredientToUpper+ " was added to "+ nameToUpper+"!");
     }
 
     @Override

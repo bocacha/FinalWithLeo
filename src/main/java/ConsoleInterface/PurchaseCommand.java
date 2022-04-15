@@ -36,7 +36,7 @@ public class PurchaseCommand {
     }
 
     public void exit() {
-        System.out.println("this is a formula");
+        System.out.println("...moving to previous menu");
     }
 
     interface MoveAction {
